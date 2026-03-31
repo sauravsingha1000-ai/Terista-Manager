@@ -1,0 +1,26 @@
+<!-- arrays.xml -->
+<resources>
+    <string-array name="theme_entries">
+        <item>Dark</item>
+        <item>Light</item>
+        <item>System</item>
+    </string-array>
+    <string-array name="theme_values">
+        <item>dark</item>
+        <item>light</item>
+        <item>system</item>
+    </string-array>
+    
+    <string-array name="sort_entries">
+        <item>Name</item>
+        <item>Date</item>
+        <item>Size</item>
+        <item>Type</item>
+    </string-array>
+    <string-array name="sort_values">
+        <item>name</item>
+        <item>date</item>
+        <item>size</item>
+        <item>type</item>
+    </string-array>
+</resources>

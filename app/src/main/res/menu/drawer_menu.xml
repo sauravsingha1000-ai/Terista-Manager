@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_recycle_bin"
+            android:icon="@drawable/ic_delete"
+            android:title="Recycle Bin" />
+        <item
+            android:id="@+id/nav_apk_extractor"
+            android:icon="@drawable/ic_apk"
+            android:title="Extract APK" />
+        <item
+            android:id="@+id/nav_storage_analyzer"
+            android:icon="@drawable/ic_storage"
+            android:title="Storage Analyzer" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="Settings" />
+    </group>
+</menu>

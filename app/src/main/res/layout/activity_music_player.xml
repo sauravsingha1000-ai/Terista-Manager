@@ -1,0 +1,43 @@
+<!-- activity_music_player.xml -->
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D0D12"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <ImageView
+        android:id="@+id/albumArt"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginBottom="24dp"
+        android:scaleType="centerCrop"
+        android:background="#171720" />
+
+    <TextView
+        android:id="@+id/songTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Song Title"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp" />
+
+    <Button
+        android:id="@+id/btnPlayPause"
+        android:layout_width="120dp"
+        android:layout_height="56dp"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#FF6B35"
+        android:text="Play"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>

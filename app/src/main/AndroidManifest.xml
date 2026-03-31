@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.terista.manager">
+
+    <!-- Core Permissions -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" 
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" 
+        tools:ignore="ScopedStorage" />
+    
+    <!-- Media Permissions -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    
+    <!-- Network (future updates) -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".TeristaApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.TeristaManager"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+
+        <!-- Main Activities -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.TeristaManager">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- File Explorer -->
+        <activity
+            android:name=".ui.explorer.FileExplorerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TeristaManager" />
+
+        <!-- Media Players -->
+        <activity
+            android:name=".ui.media.ImageViewerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TeristaManager.NoActionBar"
+            android:screenOrientation="sensorLandscape" />
+            
+        <activity
+            android:name=".ui.media.VideoPlayerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TeristaManager.NoActionBar"
+            android:screenOrientation="sensorLandscape" />
+            
+        <activity
+            android:name=".ui.media.MusicPlayerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TeristaManager" />
+
+        <!-- Settings & Tools -->
+        <activity
+            android:name=".ui.settings.SettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TeristaManager" />
+            
+        <activity
+            android:name=".ui.tools.ApkExtractorActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TeristaManager" />
+            
+        <activity
+            android:name=".ui.tools.StorageAnalyzerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TeristaManager" />
+
+        <!-- Services -->
+        <service
+            android:name=".service.MusicService"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
+
+    </application>
+</manifest>
