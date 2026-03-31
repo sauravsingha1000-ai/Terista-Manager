@@ -1,4 +1,1 @@
-<style name="CircleImage" parent="ShapeAppearance.MaterialComponents.SmallComponent">
-    <item name="cornerFamily">roundedCorner</item>
-    <item name="cornerSize">50%</item>
-</style>
+<style name="CircleImage" parent="ShapeAppearance.MaterialComponents.SmallComponent" />
