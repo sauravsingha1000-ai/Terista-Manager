@@ -1,1 +1,7 @@
-<style name="CircleImage" parent="ShapeAppearance.MaterialComponents.SmallComponent" />
+<resources>
+
+    <style name="CircleImage">
+        <!-- keep empty -->
+    </style>
+
+</resources>
