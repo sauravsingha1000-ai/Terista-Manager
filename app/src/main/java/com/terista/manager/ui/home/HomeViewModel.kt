@@ -12,9 +12,10 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import android.util.Log
 import kotlin.math.roundToInt
+import javax.inject.Inject   // ✅ ADD THIS IMPORT
 
 @HiltViewModel
-class HomeViewModel : ViewModel() {
+class HomeViewModel @Inject constructor() : ViewModel() {
 
     private val _storageInfo = MutableStateFlow(StorageInfo(0f, "0 GB", "128 GB"))
     val storageInfo: StateFlow<StorageInfo> = _storageInfo.asStateFlow()
@@ -24,18 +25,18 @@ class HomeViewModel : ViewModel() {
             try {
                 val path = Environment.getExternalStorageDirectory().path
                 val statFs = StatFs(path)
-                
+
                 val totalBytes = statFs.totalBytes.toFloat()
                 val availableBytes = statFs.availableBytes.toFloat()
                 val usedBytes = totalBytes - availableBytes
-                
+
                 val percentage = if (totalBytes > 0) {
                     ((usedBytes / totalBytes) * 100f).roundToInt().toFloat()
                 } else 0f
-                
+
                 val totalGB = "%.0f GB".format(totalBytes / (1024f * 1024f * 1024f))
                 val usedGB = "%.0f GB".format(usedBytes / (1024f * 1024f * 1024f))
-                
+
                 _storageInfo.value = StorageInfo(percentage, "$usedGB / $totalGB")
                 Log.d("TERISTA", "Storage: $percentage% used ($usedGB / $totalGB)")
             } catch (e: Exception) {
